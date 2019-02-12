@@ -8,4 +8,5 @@ export interface ISubject {
     title: string;
     items: any[];
     columns: IColumn[];
+    getDisplayName(item): string;
 }
