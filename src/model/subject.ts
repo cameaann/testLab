@@ -1,6 +1,7 @@
 export interface IColumn {
     title: string;
     property: string;
+    sortable?: boolean;
 }
 
 export interface ISubject {

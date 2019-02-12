@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
     title: "Persons",
     items: [],
     columns: [
-      { property: 'lastname', title: 'Last Name' }, 
+      { property: 'lastname', title: 'Last Name', sortable: true }, 
       { property: 'firstname', title: 'First name' }, 
       { property: 'middlename', title: 'Middle Name' }, 
       { property: 'birthday', title: 'Birthday' }
