@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
   personsSubject: ISubject = {
     title: "Persons",
-    items: [],
+    items: PERSONS,
     columns: [
       { property: 'lastname', title: 'Last Name', sortable: true }, 
       { property: 'firstname', title: 'First name' }, 

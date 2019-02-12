@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Inject, ViewChild } from '@angular/core';
 import { Person } from 'src/model/person';
 import { MatDialogRef, MAT_DIALOG_DATA, MatTableDataSource, MatSort } from '@angular/material';
-import { PERSONS } from 'src/db-data-persons';
 import { ISubject, IColumn } from 'src/model/subject';
 
 
@@ -13,36 +12,30 @@ import { ISubject, IColumn } from 'src/model/subject';
 export class PersonsComponent implements OnInit {
   constructor(
     public thisDialogRef: MatDialogRef<PersonsComponent>, 
-    @Inject(MAT_DIALOG_DATA) public data: ISubject) { 
+    @Inject(MAT_DIALOG_DATA) private data: ISubject) { 
     
-    this.title = data.title;
-    this.columns = data.columns;
-    this.displayedColumns = data.columns.map(c => c.property);
+    this.dataSource = new MatTableDataSource(data.items);
   }
 
-  persons: Person[] = PERSONS;
-  displayedColumns: string[];
+  dataSource: MatTableDataSource<any>;
   pickedRow = null;
-  title: string;
-  columns: IColumn[];
-  
 
-  dataSource = new MatTableDataSource(this.persons);
+  get displayedColumns() { 
+    return this.columns.map(c=>c.property)
+  };
+
+  get title() { return this.data.title; }
+
+  get columns() { return this.data.columns; }
   
   @ViewChild(MatSort) sort: MatSort;
   
-  @Input()
-  person: Person;
-
   ngOnInit() {
-    console.log(this.persons);
     this.dataSource.sort = this.sort;
   }
   
   onCloseConfirm(){
-    // if(this.pickedRow === undefined){
       this.thisDialogRef.close(this.pickedRow);
-    // }  
   }
 
   onCloseCancel(){
@@ -53,7 +46,4 @@ export class PersonsComponent implements OnInit {
     this.pickedRow = row;
     console.log(row);
   }
-
-
-
 }
