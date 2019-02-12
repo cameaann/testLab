@@ -1,0 +1,14 @@
+<div class = "dialMod_css">
+    <!-- <h2 mat-dialog-title>Dialog</h2> -->
+    <mat-dialog-content>
+     <strong>PERSONS</strong>
+      <button mat-raised-button (click)="openPersons()">Pick up</button>
+      <p *ngIf = 'dialogResult'>{{dialogResult.lastname + ' ' + dialogResult.middlename + ' ' + dialogResult.firstname}}</p>
+    </mat-dialog-content>
+    <br>
+    <mat-dialog-content>
+      <strong>POSITIONS</strong>
+       <button mat-raised-button (click)="openPositions()">Pick up</button>
+       <p *ngIf = 'dialogResult'>{{dialogResult.name + ' ' + dialogResult.min_age + ' ' + dialogResult.max_age}}</p>
+     </mat-dialog-content>
+</div>

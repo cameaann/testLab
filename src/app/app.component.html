@@ -4,11 +4,14 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<button (click)="show()">Persons</button>
-
+<!-- <button mat-raised-button (click)="show()">Persons</button> -->
+<!-- 
 <div *ngIf = "clicked">
   <app-persons *ngFor = "let person of persons" [person] = "person"></app-persons>
-  <button (click)="close()">Close</button>
-</div>
+  <button mat-raised-button (click)="close()">Close</button>
+</div> -->
+
+<app-dialog-mod></app-dialog-mod>
+
 
 
