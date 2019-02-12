@@ -1,3 +1,4 @@
+import { ISubject } from './subject';
 
 export interface Person {
      id: number,

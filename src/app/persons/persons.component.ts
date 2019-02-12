@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Inject, ViewChild } from '@angular/core';
 import { Person } from 'src/model/person';
 import { MatDialogRef, MAT_DIALOG_DATA, MatTableDataSource, MatSort } from '@angular/material';
 import { PERSONS } from 'src/db-data-persons';
+import { ISubject, IColumn } from 'src/model/subject';
 
 
 @Component({
@@ -10,11 +11,20 @@ import { PERSONS } from 'src/db-data-persons';
   styleUrls: ['./persons.component.css']
 })
 export class PersonsComponent implements OnInit {
-  constructor(public thisDialogRef: MatDialogRef<PersonsComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(
+    public thisDialogRef: MatDialogRef<PersonsComponent>, 
+    @Inject(MAT_DIALOG_DATA) public data: ISubject) { 
+    
+    this.title = data.title;
+    this.columns = data.columns;
+    this.displayedColumns = data.columns.map(c => c.property);
+  }
 
   persons: Person[] = PERSONS;
-  displayedColumns: string[] = ['lastname', 'firstname', 'middlename', 'birthday'];
+  displayedColumns: string[];
   pickedRow = null;
+  title: string;
+  columns: IColumn[];
   
 
   dataSource = new MatTableDataSource(this.persons);
@@ -30,9 +40,9 @@ export class PersonsComponent implements OnInit {
   }
   
   onCloseConfirm(){
-    if(this.pickedRow === undefined){
-    }
+    // if(this.pickedRow === undefined){
       this.thisDialogRef.close(this.pickedRow);
+    // }  
   }
 
   onCloseCancel(){

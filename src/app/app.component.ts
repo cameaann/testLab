@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PERSONS } from 'src/db-data-persons';
+import { ISubject } from 'src/model/subject';
 
 
 @Component({
@@ -9,6 +10,17 @@ import { PERSONS } from 'src/db-data-persons';
 })
 export class AppComponent implements OnInit {
   title = 'labTest';
+
+  personsSubject: ISubject = {
+    title: "Persons",
+    items: [],
+    columns: [
+      { property: 'lastname', title: 'Last Name' }, 
+      { property: 'firstname', title: 'First name' }, 
+      { property: 'middlename', title: 'Middle Name' }, 
+      { property: 'birthday', title: 'Birthday' }
+    ]
+  };
 
   persons = PERSONS;
   clicked =  false;

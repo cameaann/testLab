@@ -1,7 +1,8 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material';
-import { MyDialogComponent } from '../my-dialog-component/my-dialog-component';
 import { PersonsComponent } from '../persons/persons.component';
+import { ISubject } from 'src/model/subject';
+import { Subject } from 'rxjs';
 
 
 @Component({
@@ -11,18 +12,19 @@ import { PersonsComponent } from '../persons/persons.component';
 })
 export class DialogModComponent implements OnInit {
 
+  @Input() subject: ISubject;
+
   dialogResult = "";
 
   constructor(public dialog: MatDialog) { }
-  // @Inject(MAT_DIALOG_DATA) public data: any/
-
+  
   ngOnInit() {
   }
 
   openPersons() {
     let dialogRef = this.dialog.open(PersonsComponent, {
       width: '600px',
-      data: 'This text is passed into the dialog'
+      data: this.subject
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {

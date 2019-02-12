@@ -8,7 +8,6 @@ import { MatDialogModule, MatTableModule, MatSort, MatSortModule } from '@angula
 import { MatButtonModule } from '@angular/material';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 import { DialogModComponent } from './dialog-mod/dialog-mod.component';
-import { MyDialogComponent } from './my-dialog-component/my-dialog-component';
 import { MatSelectModule } from '@angular/material/select';
 import { PositionsComponent } from './positions/positions.component';
 
@@ -17,7 +16,7 @@ import { PositionsComponent } from './positions/positions.component';
     AppComponent,
     PersonsComponent,
     DialogModComponent,
-    MyDialogComponent,
+    PersonsComponent,
     PositionsComponent,
  
   ],
@@ -34,8 +33,8 @@ import { PositionsComponent } from './positions/positions.component';
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
   entryComponents: [
-    MyDialogComponent,
-    PersonsComponent
+    PersonsComponent,
+    PositionsComponent 
   ],
   bootstrap: [AppComponent]
 })
