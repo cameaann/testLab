@@ -1,17 +1,16 @@
 import { Component, OnInit, Input, Inject, ViewChild } from '@angular/core';
-import { Person } from 'src/model/person';
 import { MatDialogRef, MAT_DIALOG_DATA, MatTableDataSource, MatSort } from '@angular/material';
-import { ISubject, IColumn } from 'src/model/subject';
+import { ISubject } from 'src/model/subject';
 
 
 @Component({
-  selector: 'app-persons',
-  templateUrl: './persons.component.html',
-  styleUrls: ['./persons.component.css']
+  selector: 'app-subjects',
+  templateUrl: './subjects.component.html',
+  styleUrls: ['./subjects.component.css']
 })
-export class PersonsComponent implements OnInit {
+export class SubjectsComponent implements OnInit {
   constructor(
-    public thisDialogRef: MatDialogRef<PersonsComponent>, 
+    public thisDialogRef: MatDialogRef<SubjectsComponent>, 
     @Inject(MAT_DIALOG_DATA) private data: ISubject) { 
     
     this.dataSource = new MatTableDataSource(data.items);

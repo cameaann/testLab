@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { PersonsComponent } from './persons/persons.component';
+import { SubjectsComponent } from './subjects/subjects.component';
 import { MatDialogModule, MatTableModule, MatSort, MatSortModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
@@ -14,9 +14,9 @@ import { PositionsComponent } from './positions/positions.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PersonsComponent,
+    SubjectsComponent,
     DialogModComponent,
-    PersonsComponent,
+    SubjectsComponent,
     PositionsComponent,
  
   ],
@@ -33,7 +33,7 @@ import { PositionsComponent } from './positions/positions.component';
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
   entryComponents: [
-    PersonsComponent,
+    SubjectsComponent,
     PositionsComponent 
   ],
   bootstrap: [AppComponent]

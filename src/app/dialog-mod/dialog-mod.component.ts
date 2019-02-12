@@ -1,8 +1,7 @@
 import { Component, OnInit, Inject, Input } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material';
-import { PersonsComponent } from '../persons/persons.component';
+import { SubjectsComponent } from '../subjects/subjects.component';
 import { ISubject } from 'src/model/subject';
-import { Subject } from 'rxjs';
 
 
 @Component({
@@ -22,7 +21,7 @@ export class DialogModComponent implements OnInit {
   }
 
   openPersons() {
-    let dialogRef = this.dialog.open(PersonsComponent, {
+    let dialogRef = this.dialog.open(SubjectsComponent, {
       width: '600px',
       data: this.subject
     });
