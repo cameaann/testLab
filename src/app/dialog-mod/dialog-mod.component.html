@@ -2,7 +2,7 @@
     <!-- <h2 mat-dialog-title>Dialog</h2> -->
     <mat-dialog-content>
      <strong>{{ subject.title }}</strong>
-      <button mat-raised-button (click)="openPersons()">Pick up</button>
+      <button mat-raised-button (click)="openSubjects()">Pick up</button>
       <p *ngIf = 'dialogResult'>{{subject.getDisplayName(dialogResult)}}</p>
     </mat-dialog-content>
     <br>

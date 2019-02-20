@@ -20,7 +20,7 @@ export class DialogModComponent implements OnInit {
   ngOnInit() {
   }
 
-  openPersons() {
+  openSubjects() {
     let dialogRef = this.dialog.open(SubjectsComponent, {
       width: '600px',
       data: this.subject
@@ -28,7 +28,6 @@ export class DialogModComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.dialogResult = result;
-        console.log(this.dialogResult);
       }
 
     })

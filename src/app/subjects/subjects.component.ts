@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Inject, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatTableDataSource, MatSort } from '@angular/material';
 import { ISubject } from 'src/model/subject';
+import { SubjectService } from '../services/subject.service';
 
 
 @Component({
@@ -11,13 +12,14 @@ import { ISubject } from 'src/model/subject';
 export class SubjectsComponent implements OnInit {
   constructor(
     public thisDialogRef: MatDialogRef<SubjectsComponent>, 
-    @Inject(MAT_DIALOG_DATA) private data: ISubject) { 
+    @Inject(MAT_DIALOG_DATA) private data: ISubject, private SubjectService: SubjectService) { 
     
     this.dataSource = new MatTableDataSource(data.items);
   }
 
   dataSource: MatTableDataSource<any>;
   pickedRow = null;
+
 
   get displayedColumns() { 
     return this.columns.map(c=>c.property)
@@ -31,10 +33,13 @@ export class SubjectsComponent implements OnInit {
   
   ngOnInit() {
     this.dataSource.sort = this.sort;
-  }
+    }
   
   onCloseConfirm(){
-      this.thisDialogRef.close(this.pickedRow);
+      var approved = this.SubjectService.checkSelection(this.pickedRow, this.data.title);
+      if(approved){
+        this.thisDialogRef.close(this.pickedRow);
+      }      
   }
 
   onCloseCancel(){
@@ -43,6 +48,5 @@ export class SubjectsComponent implements OnInit {
 
   pickRow(row){
     this.pickedRow = row;
-    console.log(row);
   }
 }

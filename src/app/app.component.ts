@@ -17,8 +17,8 @@ export class AppComponent implements OnInit {
     items: PERSONS,
     columns: [
       { property: 'lastname', title: 'Last Name', sortable: true }, 
-      { property: 'firstname', title: 'First name' }, 
-      { property: 'middlename', title: 'Middle Name' }, 
+      { property: 'middlename', title: 'First name' }, 
+      { property: 'firstname' , title: 'Middle Name' }, 
       { property: 'birthday', title: 'Birthday' }
     ],
     getDisplayName(item) {
@@ -39,17 +39,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  clicked =  false;
-
   ngOnInit(){
-  }
-
-  show(){
-    return this.clicked = true;
-  }
-
-  close(){
-    return this.clicked = false; 
   }
 
 }

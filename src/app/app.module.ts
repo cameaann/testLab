@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 import { DialogModComponent } from './dialog-mod/dialog-mod.component';
 import { MatSelectModule } from '@angular/material/select';
-import { PositionsComponent } from './positions/positions.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +17,6 @@ import { PositionsComponent } from './positions/positions.component';
     SubjectsComponent,
     DialogModComponent,
     SubjectsComponent,
-    PositionsComponent,
  
   ],
   imports: [
@@ -33,8 +32,7 @@ import { PositionsComponent } from './positions/positions.component';
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
   entryComponents: [
-    SubjectsComponent,
-    PositionsComponent 
+    SubjectsComponent 
   ],
   bootstrap: [AppComponent]
 })
