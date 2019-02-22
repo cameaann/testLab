@@ -6,6 +6,18 @@ th.mat-sort-header-sorted {
     color: black;
   }
 
-row:hover{
-    background-color: aquamarine;
+
+.select_row:hover{
+    background-color: lightblue;
+    cursor: pointer;
 }
+
+.noPick > .mat-cell{
+    background-color: lightgrey;
+    color: grey !important;
+}
+
+.noPick:hover{
+    background-color: lightgrey;
+}
+

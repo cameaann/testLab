@@ -2,7 +2,7 @@
   <h2 mat-dialog-title>{{title}}</h2>
   <hr>
   <mat-dialog-content>
-    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" [trackBy]="trackById">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" [trackBy]="trackById" >
 
       <ng-container *ngFor="let column of columns" [matColumnDef]="column.property">
         <th mat-header-cell *matHeaderCellDef mat-sort-header [disabled]="!column.sortable">{{ column.title }}</th>
@@ -10,8 +10,8 @@
       </ng-container>    
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns; " (click)=pickRow(row)
-        [style.background]="pickedRow === row ? 'lightblue' : ''"></tr>
+      <tr class = "select_row" mat-row *matRowDef="let row; columns: displayedColumns; " (click)=pickRow(row)
+        [style.background]="pickedRow === row ? 'lightblue' : ''"  [ngClass]="addClass(row)"></tr>
     </table>
 
   </mat-dialog-content>

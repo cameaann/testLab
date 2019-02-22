@@ -16,8 +16,7 @@ import { MatSelectModule } from '@angular/material/select';
     AppComponent,
     SubjectsComponent,
     DialogModComponent,
-    SubjectsComponent,
- 
+    SubjectsComponent 
   ],
   imports: [
     BrowserModule,
@@ -32,7 +31,7 @@ import { MatSelectModule } from '@angular/material/select';
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
   entryComponents: [
-    SubjectsComponent 
+    SubjectsComponent
   ],
   bootstrap: [AppComponent]
 })
