@@ -2,8 +2,6 @@ import { Component, OnInit, Input, Inject, ViewChild, ElementRef } from '@angula
 import { MatDialogRef, MAT_DIALOG_DATA, MatTableDataSource, MatSort } from '@angular/material';
 import { ISubject } from 'src/model/subject';
 import { SubjectService } from '../services/subject.service';
-import { DISABLED } from '@angular/forms/src/model';
-
 
 @Component({
   selector: 'app-subjects',

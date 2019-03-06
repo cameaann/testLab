@@ -29,12 +29,7 @@ export class SubjectService {
 
     else if (title === "Positions") {
       this.position = val;
-    }
-
-  
-
+    } 
   }
-
-
 }
 
