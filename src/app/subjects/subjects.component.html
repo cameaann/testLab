@@ -2,7 +2,7 @@
   <h2 mat-dialog-title>{{title}}</h2>
   <hr>
   <mat-dialog-content>
-    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" [trackBy]="trackById" >
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" >
 
       <ng-container *ngFor="let column of columns" [matColumnDef]="column.property">
         <th mat-header-cell *matHeaderCellDef mat-sort-header [disabled]="!column.sortable">{{ column.title }}</th>
